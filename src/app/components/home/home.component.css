@@ -1,0 +1,19 @@
+table{
+    width: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: block;
+    font-size: 2rem;
+    margin: auto;
+}
+table tr {
+    width: fit-content;
+    
+}
+table tr td{
+    width: fit-content;
+    padding: 10px;
+}
+
