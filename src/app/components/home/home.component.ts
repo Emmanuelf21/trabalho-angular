@@ -1,15 +1,15 @@
-import { Component, Type } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent],//importação do componente header
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   textoBtn = "Gerar Tabela";
-  
+
   pessoas: { nome: string, idade: number }[] = [];
   isAtivo = true;
   
