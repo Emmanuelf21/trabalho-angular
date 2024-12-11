@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Type } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
@@ -8,9 +8,27 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  pessoas = [
-    { name: 'João', age: 25},
-    { name: 'Maria', age: 30},
-    { name: 'Carlos', age: 22},
-  ]
+  textoBtn = "Gerar Tabela";
+  
+  pessoas: { nome: string, idade: number }[] = [];
+  isAtivo = true;
+  
+  //lista de nomes predeterminados
+  private nomes = [
+    'João', 'Maria', 'Carlos', 'Ana', 'Luísa', 'Pedro', 'Julia', 'Lucas', 'Fernanda', 'Rafael',
+    'Carlos', 'Beatriz', 'Marcelo', 'Gabriela', 'Ricardo', 'Simone', 'Lucas', 'Patricia', 'Felipe', 'Amanda',
+    'Thiago', 'Juliana', 'Fernanda', 'Roberto', 'Vanessa', 'Daniel', 'Eduarda', 'Raquel', 'André', 'Carla'
+  ];
+
+  private gerarIdade(): number{
+    //a idade minima gerada será 18 e a máxima será 83
+    return Math.floor(Math.random()*(100 - 18 +1)+18);
+  }
+
+  gerarPessoas(){
+    for( const nome of this.nomes){
+      this.pessoas.push({nome : nome, idade: this.gerarIdade()})
+    }
+    this.isAtivo = false;
+  }
 }
